@@ -9,7 +9,13 @@ const Home = () => {
       <Link to="/start">
         <button className="relative text-2xl bg-cyan-400 text-black px-6 py-3 rounded-md transform transition-transform duration-300 hover:scale-110 overflow-hidden">
           <span className="absolute inset-0 bg-white opacity-10 transition-opacity duration-300 group-hover:opacity-20"></span>
-          <span className="relative">Start Game</span>
+          <span className="relative">TicTacToe Pro Max</span>
+        </button>
+      </Link>
+      <Link to="/game2">
+        <button className="relative text-2xl my-8 bg-cyan-400 text-black px-6 py-3 rounded-md transform transition-transform duration-300 hover:scale-110 overflow-hidden">
+          <span className="absolute inset-0 bg-white opacity-10 transition-opacity duration-300 group-hover:opacity-20"></span>
+          <span className="relative">TicTacToe Pro</span>
         </button>
       </Link>
       <div className="mt-10 flex space-x-4">

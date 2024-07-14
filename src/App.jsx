@@ -6,6 +6,9 @@ import Score from './pages/Score';
 import About from './pages/About';
 import Start from './pages/Start';
 import AI from    './pages/AI';
+import TicTac from './game2/TicTac';
+import Game2 from './game2/Game2';
+import TicTacAi from './game2/TicTacAi';
 
 const App = () => {
   return (
@@ -17,6 +20,9 @@ const App = () => {
         <Route path="/scorecard" element={<Score />} />
         <Route path="/about" element={<About />} />
         <Route path="/ai" element={<AI/>}/>
+        <Route path="/game2" element={<Game2/>}/>
+        <Route path="/game21" element={<TicTac/>}/>
+        <Route path="/game22" element={<TicTacAi/>}/>
       </Routes>
    
   );

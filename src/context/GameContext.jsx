@@ -5,6 +5,28 @@ const GameContext = createContext(null);
 const GameProvider = ({ children }) => {
   const [chance, setChance] = useState('O');
   const [state,setState]=useState(0);
+  const [cell,setCell]=useState([
+    { id :1,brow:0,bcol:0,w:''},
+    { id :2,brow:0,bcol:1,w:'-1'},
+    { id :3,brow:0,bcol:2,w:''},
+    { id :4,brow:1,bcol:0,w:''},
+    { id :5,brow:1,bcol:1,w:''},
+    { id :6,brow:1,bcol:2,w:'1'},
+    { id :7,brow:2,bcol:0,w:''},
+    { id :8,brow:2,bcol:1,w:''},
+    { id :9,brow:2,bcol:2,w:''}
+   ])
+   const [grid,setGrid]=useState([
+    { id :1,row:0,col:0,w:''},
+    { id :2,row:0,col:1,w:''},
+    { id :3,row:0,col:2,w:''},
+    { id :4,row:1,col:0,w:''},
+    { id :5,row:1,col:1,w:''},
+    { id :6,row:1,col:2,w:''},
+    { id :7,row:2,col:0,w:''},
+    { id :8,row:2,col:1,w:''},
+    { id :9,row:2,col:2,w:''}
+    ])
   const tic = [
     [0, 0, 0],
     [0, 0, 0],
@@ -23,7 +45,7 @@ const GameProvider = ({ children }) => {
   }
   const checkSmall = (r, c) => {
     const smallGrid = grids[r][c];
-  
+    
     // Check rows
     for (let i = 0; i < 3; i++) {
       if (smallGrid[i][0] !== 0 &&
@@ -56,6 +78,16 @@ const GameProvider = ({ children }) => {
   
     return 0;
   };
+  const checkTic=(r,c)=>{
+        const v=checkSmall(r,c);
+        if(v==1){
+            grid.map((c)=>{
+                if(c.row===r&&c.col===c){
+                    
+                }
+            })
+        }
+  }
   
 
   const setX = (bigRow, bigCol, smallRow, smallCol) => {
@@ -71,6 +103,7 @@ const GameProvider = ({ children }) => {
       //console.log(grids);
       return newGrids;
     });
+    checkTic(bigRow,bigCol);
   };
   
   const setY = (bigRow, bigCol, smallRow, smallCol) => {
@@ -90,7 +123,9 @@ const GameProvider = ({ children }) => {
   
 
   const value={
-    state,setState,setX,setY,ChangeChance,chance,checkSmall
+    state,setState,setX,setY,
+    ChangeChance,chance,checkSmall,
+    grid,cell
   }
 
   return (

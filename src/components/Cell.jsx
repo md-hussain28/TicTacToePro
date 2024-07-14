@@ -31,14 +31,10 @@ const Cell = ({ row,col, brow,bcol }) => {
         else{setY(brow,bcol,row,col)}
         setVal(chance);
         ChangeChance();
-        if(checkSmall(brow,bcol)===-1)
-        {console.log("winner :X")}
-        else if(checkSmall(brow,bcol)===0)
-          {console.log("winner :none")}
-        else{console.log("winner :Y")}
-        //console.log("Chance called",chance);
+        checkSmall(row,col);
     }
   }
+  
  
 
   return (
